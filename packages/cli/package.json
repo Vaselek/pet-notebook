@@ -1,0 +1,29 @@
+{
+  "name": "pet-notebook",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsc --watch --preserveWatchOutput",
+    "prepublishOnly": "esbuild --platform=node --outdir=dist --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\" src/index.ts"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": "dist/index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@pet-notebook/local-client": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5",
+    "esbuild": "0.8.26",
+    "typescript": "^5.4.4",
+    "@pet-notebook/local-api": "^1.0.0",
+    "commander": "^12.0.0"
+  }
+}
